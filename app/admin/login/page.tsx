@@ -1,8 +1,6 @@
-import dynamic from "next/dynamic";
+import AdminLoginClient from "./AdminLoginClient";
 
-const AdminLoginClient = dynamic(() => import("./AdminLoginClient"), {
-  ssr: false,
-});
+export const dynamic = "force-dynamic";
 
 export default function Page() {
   return <AdminLoginClient />;
