@@ -1,12 +1,9 @@
-import { Suspense } from "react";
-import AdminLoginClient from "./AdminLoginClient";
+import dynamic from "next/dynamic";
 
-export const dynamic = "force-dynamic";
+const AdminLoginClient = dynamic(() => import("./AdminLoginClient"), {
+  ssr: false,
+});
 
 export default function Page() {
-  return (
-    <Suspense fallback={null}>
-      <AdminLoginClient />
-    </Suspense>
-  );
+  return <AdminLoginClient />;
 }
