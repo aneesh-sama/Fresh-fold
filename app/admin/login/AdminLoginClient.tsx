@@ -15,7 +15,7 @@ export default function AdminLoginPage() {
   const searchParams = useSearchParams();
   const { user, loading } = useAuth();
 
-  const [email, setEmail] = useState(process.env.NEXT_PUBLIC_ADMIN_EMAIL || "");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
